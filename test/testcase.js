@@ -19,9 +19,12 @@ contract("final assignment test cases", (accounts) => {
       from: accounts[0],
     });
     console.log(value);
-    expect(await value.toNumber()).to.equal(
-      "0x6e402b78F98CF9bfb32757dd0EFc50fA056778bc",
-      100
+    var A = await value;
+    var B =await A.spender;
+    console.log(B)
+
+    expect( B).to.equal(
+      "0x6e402b78F98CF9bfb32757dd0EFc50fA056778bc"
     );
   });
 
