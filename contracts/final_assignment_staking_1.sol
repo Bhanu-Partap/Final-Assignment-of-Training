@@ -49,7 +49,7 @@ contract Staking_Token {
             Stake_details[msg.sender].isClaimed =false;
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
             Token.transferFrom(msg.sender, address(this), _amount);
-            emit tokensStaked(msg.sender, _amount, block.timestamp);
+            emit tokensStaked(msg.sender, _amount, Stake_details[msg.sender].starting_stake_time);
         } 
         else if (keccak256(abi.encodePacked(_type)) == keccak256(abi.encodePacked("unfixed")) ) {
             Stake_details[msg.sender].stake_amount = _amount;
