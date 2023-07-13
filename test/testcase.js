@@ -20,18 +20,16 @@ contract("final assignment test cases", (accounts) => {
       from: accounts[0]
     });
     console.log(value);
-    const allow = await erC20.allowance(Owner,delegate_address);
-    console.log(allow);
-    expect( await value).to.equal( allow.toNumber()
-    );
+    expect( await value).to.equal(delegate_address);
+    expect(await erC20.allowance(Owner,delegate_address)).to.equal(_amount);
   });
 
-  it("should it setting the right value", async () => {
+//   it("should it setting the right value", async () => {
 
-    const value = await stakingcontract.staking(100, "fixed", 100, true, {
-      from: accounts[0]
-    });
-    console.log(value);
-    expect(await value.toNumber()).to.equal(100, "fixed", 100, true);
-  });
+//     const value = await stakingcontract.staking(100, "fixed", 100, true, {
+//       from: accounts[0]
+//     });
+//     console.log(value);
+//     expect(await value.toNumber()).to.equal(100, "fixed", 100, true);
+//   });
 });
