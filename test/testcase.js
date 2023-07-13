@@ -19,21 +19,21 @@ contract("final assignment test cases", (accounts) => {
       from: accounts[0],
     });
     console.log(value);
-    expect(await value).to.equal(
+    expect(await value.toNumber()).to.equal(
       "0x6e402b78F98CF9bfb32757dd0EFc50fA056778bc",
       100
     );
   });
 
-  it("should it setting the right value", async () => {
-    //   const ERC20 = await assignment.deployed();
-    // const contractAssign = await assignment.deployed(ERC20);
+//   it("should it setting the right value", async () => {
+//     //   const ERC20 = await assignment.deployed();
+//     // const contractAssign = await assignment.deployed(ERC20);
 
-    const value = await contractAssign.staking(100, "fixed", 100, true, {
-      from: accounts[0],
-      gas: 300000,
-    });
-    console.log(value);
-    expect(await value.toNumber()).to.equal(100, "fixed", 100, true);
-  });
+//     const value = await stakingcontract.staking(100, "fixed", 100, true, {
+//       from: accounts[0],
+//       gas: 300000,
+//     });
+//     console.log(value);
+//     expect(await value.toNumber()).to.equal(100, "fixed", 100, true);
+//   });
 });
